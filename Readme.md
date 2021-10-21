@@ -47,12 +47,12 @@
 
 - Like post:
 
-`curl --location --request POST 'http://127.0.0.1:8006/api/v1/posts/<post_id>/post-like/' 
+`curl --location --request POST 'http://127.0.0.1:8006/api/v1/posts/<post_id>/likes/' 
 --header 'Authorization: Bearer <access token>'`
 
 - Unlike post:
 
-`curl --location --request DELETE 'http://127.0.0.1:8006/api/v1/posts/<post_id>/post-unlike/' 
+`curl --location --request DELETE 'http://127.0.0.1:8006/api/v1/posts/<post_id>/likes/' 
 --header 'Authorization: Bearer <access token>'`
 
 - Example of data analytics url:

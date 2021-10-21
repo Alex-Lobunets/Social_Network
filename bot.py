@@ -67,7 +67,7 @@ class API(Auth):
             return {}
 
     def like_post(self, post_id: int) -> bool:
-        url = self._host + "/api/v1/posts/%s/post-like/" % post_id
+        url = self._host + "/api/v1/posts/%s/likes/" % post_id
         try:
             requests.post(url=url, headers=self.get_headers)
             return True
