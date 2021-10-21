@@ -1,0 +1,29 @@
+version: '3.7'
+
+
+services:
+
+  postgresql:
+    image: postgres:11.5-alpine
+    volumes:
+      - blog_pg_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: blog
+      POSTGRES_PASSWORD: blog
+      POSTGRES_DB: blog
+
+  backend:
+    build: .
+    depends_on:
+      - postgresql
+    volumes:
+      - .:/app
+    ports:
+      - 8006:8000
+    environment:
+      DEBUG: 1
+
+volumes:
+  blog_pg_data:

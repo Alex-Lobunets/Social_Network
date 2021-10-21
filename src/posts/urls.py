@@ -1,0 +1,12 @@
+from django.urls import include, path
+from rest_framework.routers import SimpleRouter
+
+from . import views
+
+router = SimpleRouter()
+router.register('posts', views.PostViewSet)
+router.register('analytics', views.LikeAnalyticsViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
